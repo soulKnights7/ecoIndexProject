@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.c01a764b.css",
-    "main.js": "/static/js/main.309d2877.js",
-    "index.html": "/index.html",
-    "main.c01a764b.css.map": "/static/css/main.c01a764b.css.map",
-    "main.309d2877.js.map": "/static/js/main.309d2877.js.map"
+    "main.css": "/ecoIndexProject/static/css/main.c01a764b.css",
+    "main.js": "/ecoIndexProject/static/js/main.309d2877.js",
+    "index.html": "/ecoIndexProject/index.html",
+    "main.c01a764b.css.map": "/ecoIndexProject/static/css/main.c01a764b.css.map",
+    "main.309d2877.js.map": "/ecoIndexProject/static/js/main.309d2877.js.map"
   },
   "entrypoints": [
     "static/css/main.c01a764b.css",
