@@ -1,0 +1,9 @@
+.canvas-container {
+    position: relative;
+}
+
+.legend {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
