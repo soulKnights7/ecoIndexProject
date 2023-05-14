@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 const GarmentCertificationDropdown = ({ onScoreChange }) => {
   const garmentCertifications = [
-    { label: "GOTS", score: 0.92 },
-    { label: "OCS", score: 0.93 },
-    { label: "GRS", score: 0.93 },
+    { label: "GOTS - 0.92", score: 0.92 },
+    { label: "OCS - 0.93", score: 0.93 },
+    { label: "GRS - 0.93", score: 0.93 },
   ];
 
   const [selectedCertification, setSelectedCertification] = useState("");

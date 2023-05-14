@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 const TrimsDropdown = ({ onScoreChange }) => {
   const trims = [
-    { label: "snap button", score: 0.1 },
-    { label: "recycled button", score: 2.73 },
-    { label: "recycled thread", score: 2.73 },
-    { label: "dracord", score: 0.07 },
-    { label: "zipper", score: 0.04 },
-    { label: "button", score: 0.01 },
-    { label: "thread", score: 2.73 },
-    { label: "interlining", score: 3.7 },
+    { label: "snap button - 0.1", score: 0.1 },
+    { label: "recycled button - 2.73", score: 2.73 },
+    { label: "recycled thread - 2.73", score: 2.73 },
+    { label: "dracord - 0.07", score: 0.07 },
+    { label: "zipper - 0.04", score: 0.04 },
+    { label: "button - 0.01", score: 0.01 },
+    { label: "thread - 2.73", score: 2.73 },
+    { label: "interlining - 3.7", score: 3.7 },
   ];
 
   const [selectedTrim, setSelectedTrim] = useState("");

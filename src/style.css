@@ -23,7 +23,7 @@ button {
     justify-content: center;
     margin: auto;
     padding: 2rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: white;
     background-color: #282f3c;
@@ -54,6 +54,7 @@ button {
 .selectStyle {
 
     background-color: #282f3c;
+
     border-radius: 8px;
     width: 92%;
 
@@ -77,8 +78,12 @@ button {
     font-weight: 300;
     padding-left: 0.5rem;
     color: white;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #282f3c;
 
+}
+
+.selectStyle>select>option {
+    background-color: white;
 }
 
 .selectStyle>input {
@@ -86,15 +91,25 @@ button {
 }
 
 .pieGrp {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
     background-color: #282f3c;
     border-radius: 8px;
     width: fit-content;
     height: 370px;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
+}
+
+.pieGrp>p {
+    font-size: 20px;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+
 }
 
 .left-stats {
@@ -153,9 +168,13 @@ button {
     border-left: none;
     border-right: none;
     border-bottom: solid 1px white;
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: white;
     margin-right: 0.5rem;
+}
+
+.dropdown>select>option {
+    font-size: 1rem;
 }
 
 .dropdown>input {
@@ -208,4 +227,20 @@ body {
 
 button {
     border-radius: 5px;
+}
+
+.borderGreen {
+    border: solid 3px green;
+}
+
+.borderRed {
+    border: solid 2px #ED2B2A;
+}
+
+.borderOrange {
+    border: solid 2px #FC4F00;
+}
+
+.borderYellow {
+    border: solid 2px yellow;
 }

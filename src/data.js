@@ -201,7 +201,7 @@ export const row1 = [
   0,
   0.3335,
   88.00299964,
-  "RED",
+  "Red",
 ];
 
 export const row2 = [
@@ -304,7 +304,7 @@ export const row2 = [
   0,
   0.3335,
   73.11205168,
-  "RED",
+  "Red",
 ];
 
 export const row3 = [
@@ -509,7 +509,7 @@ export const row4 = [
   0,
   0.21,
   42.35828494,
-  "ORANGE",
+  "Orange",
 ];
 
 export const row5 = [
@@ -612,5 +612,5 @@ export const row5 = [
   0,
   0.21,
   42.35828494,
-  "ORANGE",
+  "Orange",
 ];

@@ -23,6 +23,7 @@ export default function Dashboard() {
   const [total, setTotal] = React.useState(undefined);
   const [color, setColor] = React.useState(undefined);
   const [toggle, setToggle] = React.useState(0);
+  const [confirm, setConfirm] = React.useState(0);
   const handleScoreChange = (score, value) => {
     if (value === "one") setOne(score);
     if (value === "two") setTwo(score);
@@ -38,6 +39,7 @@ export default function Dashboard() {
     else if (event.target.value === "CASUAL LINRN BOYFRIEND SHIRT")
       setcurRow(row5);
     else if (event.target.value === "none") setcurRow(undefined);
+    setConfirm(true);
   }
   function handleFile(event) {
     const file = event.target.files[0];
@@ -54,10 +56,10 @@ export default function Dashboard() {
   };
   React.useEffect(() => {
     setToggle(1);
-    if (total > 0 && total <= 20) setColor("green");
-    if (total >= 21 && total <= 40) setColor("yellow");
-    if (total >= 41 && total <= 65) setColor("orange");
-    if (total > 66 && total <= 100) setColor("red");
+    if (total > 0 && total <= 20) setColor("Green");
+    if (total >= 21 && total <= 40) setColor("Yellow");
+    if (total >= 41 && total <= 65) setColor("Orange");
+    if (total > 66 && total <= 100) setColor("Red");
   }, [total]);
   const reset = () => {
     setTotal(0);
@@ -72,202 +74,235 @@ export default function Dashboard() {
   };
   return (
     <div>
-      <input
-        type="file"
-        placeholder="nfwedf"
-        className="excelexcel"
-        onChange={handleFile}
-      />
+      <p className="excelexcel">Eco Index Environmental Indicator</p>
       <br />
       <br />
 
-      {rows[0] && (
-        <div className="card">
-          <article className="leftCard">
-            <span className="selectStyle">
-              <label className="selectLabelStyle" htmlFor="styleCode">
-                Select Style Code &nbsp;&nbsp;&nbsp;{" "}
-              </label>
-              <select id="styleCode" onChange={handleChange}>
-                {allrows.map((row, index) => (
-                  <option key={index} value={row[1]}>
-                    {row[1]}
-                  </option>
-                ))}
-              </select>
-            </span>
-            <br />
+      <div className="card">
+        <article className="leftCard">
+          <span
+            className={
+              confirm ? `border${curRow[99]} selectStyle` : "selectStyle"
+            }
+          >
+            <label className="selectLabelStyle" htmlFor="styleCode">
+              Select Style Code &nbsp;&nbsp;&nbsp;{" "}
+            </label>
+            <select id="styleCode" onChange={handleChange}>
+              {allrows.map((row, index) => (
+                <option key={index} value={row[1]}>
+                  {row[1]}
+                </option>
+              ))}
+            </select>
+          </span>
+          <br />
 
-            {curRow && (
-              <div className="box">
-                {" "}
-                <article
-                  style={{
-                    display: "flex",
-                    width: "100%",
-                    justifyContent: "flex-start",
-                  }}
-                >
-                  <span className="pieGrp">
-                    <PieChart
-                      labels={[
-                        header[7],
-                        header[9],
-                        header[11],
-                        header[13],
-                        header[15],
-                      ]}
-                      data={[
-                        curRow[8],
-                        curRow[10],
-                        curRow[12],
-                        curRow[14],
-                        curRow[16],
-                      ]}
-                    />
-                  </span>
-                  <span className="pieGrp">
-                    <PieChart
-                      labels={[
-                        curRow[18],
-                        curRow[20],
-                        curRow[22],
-                        "Garment certifications 4",
-                        "Garment certifications 5",
-                      ]}
-                      data={[
-                        curRow[19],
-                        curRow[21],
-                        curRow[23],
-                        curRow[25],
-                        curRow[27],
-                      ]}
-                    />
-                  </span>
-                  <span className="pieGrp">
-                    <PieChart
-                      labels={[
-                        curRow[85],
-                        curRow[87],
-                        curRow[89],
-                        "Accessories & Packaging4",
-                        "Accessories & Packaging5",
-                      ]}
-                      data={[
-                        curRow[86],
-                        curRow[88],
-                        curRow[90],
-                        curRow[92],
-                        curRow[94],
-                      ]}
-                    />
-                  </span>
-                </article>
-                <article
-                  style={{
-                    display: "flex",
-                    width: "100%",
-                  }}
-                >
-                  <span className="pieGrp">
-                    <PieChart
-                      labels={[
-                        curRow[76],
-                        curRow[78],
-                        "Wet Processes3",
-                        "Wet Processes4",
-                      ]}
-                      data={[curRow[77], curRow[79], curRow[81], curRow[83]]}
-                    />
-                  </span>
-                  <span className="pieGrp">
-                    <PieChart
-                      labels={[
-                        curRow[29],
-                        "material 2",
-                        "material 3",
-                        "material 4",
-                      ]}
-                      data={[curRow[31], curRow[34], curRow[37], curRow[40]]}
-                    />
-                  </span>
-                  <span className="pieGrp">
-                    <PieChart
-                      labels={[
-                        curRow[52],
-                        curRow[54],
-                        curRow[56],
-                        " Trims & Embroidery 4",
-                        " Trims & Embroidery 5",
-                        " Trims & Embroidery 6",
-                        " Trims & Embroidery 7",
-                      ]}
-                      data={[
-                        curRow[53],
-                        curRow[55],
-                        curRow[57],
-                        curRow[59],
-                        curRow[61],
-                        curRow[63],
-                        curRow[65],
-                      ]}
-                    />
-                  </span>
-                </article>
-                <span className="left-stats">
-                  <p>Overall Score: {curRow[98]}</p>
-                  <p>Overall Color Category: {curRow[99]}</p>
-                </span>
-              </div>
-            )}
-          </article>
           {curRow && (
-            <article className="rightCard">
-              <span className="styleselected">
-                <label htmlFor="styleCode">
-                  Select Style Code &nbsp;&nbsp;&nbsp;{" "}
-                </label>
-                <input type="text" className="excel" value={styleSelected} />
-              </span>
-              <MaterialDropdown onScoreChange={handleScoreChange} />
-              <TrimsDropdown onScoreChange={handleScoreChange} />
-              <WetProcessDropdown onScoreChange={handleScoreChange} />
-              <AccessoriesDropdown onScoreChange={handleScoreChange} />
-              <YarnCertificationDropdown onScoreChange={handleScoreChange} />
-              <GarmentCertificationDropdown onScoreChange={handleScoreChange} />
-              <span
+            <div className="box">
+              {" "}
+              <article
                 style={{
                   display: "flex",
-                  width: "85%",
-                  margin: "auto",
-                  justifyContent: "center",
+                  width: "100%",
+                  justifyContent: "flex-start",
                 }}
               >
-                <input
-                  type="text"
-                  className="totalVal"
-                  placeholder="Total"
-                  value={total}
-                />
-                <button onClick={handleClick}>Calculate Total</button>
-                <button onClick={reset}>Reset</button>
+                <span
+                  className={confirm ? `border${curRow[99]} pieGrp` : "pieGrp"}
+                >
+                  <p>Yarn certifications</p>
+                  <PieChart
+                    labels={[
+                      header[7],
+                      header[9],
+                      header[11],
+                      header[13],
+                      header[15],
+                    ]}
+                    data={[
+                      curRow[8],
+                      curRow[10],
+                      curRow[12],
+                      curRow[14],
+                      curRow[16],
+                    ]}
+                  />
+                </span>
+                <span
+                  className={confirm ? `border${curRow[99]} pieGrp` : "pieGrp"}
+                >
+                  <p>Garment certifications</p>
+                  <PieChart
+                    labels={[
+                      curRow[18],
+                      curRow[20],
+                      curRow[22],
+                      "Garment certifications 4",
+                      "Garment certifications 5",
+                    ]}
+                    data={[
+                      curRow[19],
+                      curRow[21],
+                      curRow[23],
+                      curRow[25],
+                      curRow[27],
+                    ]}
+                  />
+                </span>
+                <span
+                  className={confirm ? `border${curRow[99]} pieGrp` : "pieGrp"}
+                >
+                  <p>Accessories & Packaging</p>
+                  <PieChart
+                    labels={[
+                      curRow[85],
+                      curRow[87],
+                      curRow[89],
+                      "Accessories & Packaging4",
+                      "Accessories & Packaging5",
+                    ]}
+                    data={[
+                      curRow[86],
+                      curRow[88],
+                      curRow[90],
+                      curRow[92],
+                      curRow[94],
+                    ]}
+                  />
+                </span>
+              </article>
+              <article
+                style={{
+                  display: "flex",
+                  width: "100%",
+                }}
+              >
+                <span
+                  className={confirm ? `border${curRow[99]} pieGrp` : "pieGrp"}
+                >
+                  <p>Wet Process</p>
+                  <PieChart
+                    labels={[
+                      curRow[76],
+                      curRow[78],
+                      "Wet Processes3",
+                      "Wet Processes4",
+                    ]}
+                    data={[curRow[77], curRow[79], curRow[81], curRow[83]]}
+                  />
+                </span>
+                <span
+                  className={confirm ? `border${curRow[99]} pieGrp` : "pieGrp"}
+                >
+                  <p>Material</p>
+                  <PieChart
+                    labels={[
+                      curRow[29],
+                      "material 2",
+                      "material 3",
+                      "material 4",
+                    ]}
+                    data={[curRow[31], curRow[34], curRow[37], curRow[40]]}
+                  />
+                </span>
+                <span
+                  className={confirm ? `border${curRow[99]} pieGrp` : "pieGrp"}
+                >
+                  <p>Trims & Embroidery</p>
+                  <PieChart
+                    labels={[
+                      curRow[52],
+                      curRow[54],
+                      curRow[56],
+                      " Trims & Embroidery 4",
+                      " Trims & Embroidery 5",
+                      " Trims & Embroidery 6",
+                      " Trims & Embroidery 7",
+                    ]}
+                    data={[
+                      curRow[53],
+                      curRow[55],
+                      curRow[57],
+                      curRow[59],
+                      curRow[61],
+                      curRow[63],
+                      curRow[65],
+                    ]}
+                  />
+                </span>
+              </article>
+              <span
+                className={
+                  confirm ? `border${curRow[99]} left-stats` : "left-stats"
+                }
+              >
+                <p style={{ padding: "1rem" }}>Overall Score: {curRow[98]}</p>
+                <p
+                  style={{
+                    backgroundColor: `${curRow[99]}`,
+                    padding: "1rem",
+                    borderRadius: "5px",
+                  }}
+                >
+                  Overall Color Category: {curRow[99]}
+                </p>
               </span>
-              <div className="reesult">
-                {color && (
-                  <span
-                    style={{
-                      width: "100%",
-                      color: `${color}`,
-                    }}
-                  >
-                    {color}
-                  </span>
-                )}
-              </div>
-            </article>
+            </div>
           )}
-        </div>
-      )}
+        </article>
+        {curRow && (
+          <article
+            className={
+              color ? `border${color} rightCard border` : "rightCard border"
+            }
+          >
+            <span className="styleselected">
+              <label htmlFor="styleCode">
+                Select Style Code &nbsp;&nbsp;&nbsp;{" "}
+              </label>
+              <input type="text" className="excel" value={styleSelected} />
+            </span>
+            <MaterialDropdown onScoreChange={handleScoreChange} />
+            <TrimsDropdown onScoreChange={handleScoreChange} />
+            <WetProcessDropdown onScoreChange={handleScoreChange} />
+            <AccessoriesDropdown onScoreChange={handleScoreChange} />
+            <YarnCertificationDropdown onScoreChange={handleScoreChange} />
+            <GarmentCertificationDropdown onScoreChange={handleScoreChange} />
+            <span
+              style={{
+                display: "flex",
+                width: "85%",
+                margin: "auto",
+                justifyContent: "center",
+              }}
+            >
+              <input
+                type="text"
+                className="totalVal"
+                placeholder="Total"
+                value={total}
+              />
+              <button onClick={handleClick}>Calculate Total</button>
+              <button onClick={reset}>Reset</button>
+            </span>
+            <div className="reesult">
+              {color && (
+                <span
+                  style={{
+                    width: "100%",
+                    color: `black `,
+                    backgroundColor: `${color}`,
+                    borderRadius: "5px",
+                  }}
+                >
+                  {color.toUpperCase()}
+                </span>
+              )}
+            </div>
+          </article>
+        )}
+      </div>
     </div>
   );
 }

@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 const YarnCertificationDropdown = ({ onScoreChange }) => {
   const yarnCertifications = [
-    { label: "GRS", score: 0.92 },
-    { label: "RWS", score: 0.92 },
-    { label: "ZDHC", score: 0.93 },
-    { label: "GOTS", score: 0.92 },
-    { label: "OCS", score: 0.93 },
-    { label: "RCS", score: 0.93 },
-    { label: "Oeko-Tex Std 100", score: 0.92 },
+    { label: "GRS - 0.92", score: 0.92 },
+    { label: "RWS - 0.92", score: 0.92 },
+    { label: "ZDHC -  0.93", score: 0.93 },
+    { label: "GOTS -  0.92", score: 0.92 },
+    { label: "OCS - 0.93", score: 0.93 },
+    { label: "RCS - 0.93", score: 0.93 },
+    { label: "Oeko-Tex Std 100 - 0.92", score: 0.92 },
   ];
 
   const [selectedCertification, setSelectedCertification] = useState("");

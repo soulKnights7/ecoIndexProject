@@ -2,14 +2,20 @@ import React, { useState } from "react";
 
 const AccessoriesDropdown = ({ onScoreChange }) => {
   const accessories = [
-    { label: "polybag medium recycled", score: 1.08 },
-    { label: "care label polyester", score: 0.017 },
-    { label: "care label wowen", score: 0.024 },
-    { label: "coller band paper", score: 0.12 },
-    { label: "cord polyester", score: 0.4 },
-    { label: "tissue paper", score: 0.11 },
-    { label: "Hang Tag Individual hangtag- Small Hangtag", score: 0.005 },
-    { label: "Main Label Printed Fabric Label (Conventional)", score: 0.205 },
+    { label: "polybag medium recycled - 1.08", score: 1.08 },
+    { label: "care label polyester - 0.017", score: 0.017 },
+    { label: "care label wowen - 0.024", score: 0.024 },
+    { label: "coller band paper - 0.12", score: 0.12 },
+    { label: "cord polyester - 0.4", score: 0.4 },
+    { label: "tissue paper - 0.11", score: 0.11 },
+    {
+      label: "Hang Tag Individual hangtag- Small Hangtag - 0.005",
+      score: 0.005,
+    },
+    {
+      label: "Main Label Printed Fabric Label (Conventional) - 0.205",
+      score: 0.205,
+    },
   ];
 
   const [selectedAccessory, setSelectedAccessory] = useState("");

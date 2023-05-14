@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 const WetProcessDropdown = ({ onScoreChange }) => {
   const wetProcesses = [
-    { label: "Silicon wash", score: 6.1 },
-    { label: "aqua tech", score: 0.9 },
-    { label: "garment wash normal wash", score: 1.7 },
-    { label: "enzyme wash", score: 7.2 },
-    { label: "curring", score: 6.4 },
-    { label: "Garment Dye REACTIVE DYE", score: 16.4815 },
-    { label: "Garment Wash GARMENT DIPPING NORMAL", score: 16.4 },
-    { label: "Garment Dye PIGMENT DYE", score: 18.836 },
+    { label: "Silicon wash - 6.1", score: 6.1 },
+    { label: "aqua tech - 0.9", score: 0.9 },
+    { label: "garment wash normal wash - 1.7", score: 1.7 },
+    { label: "enzyme wash - 7.2", score: 7.2 },
+    { label: "curring - 6.4", score: 6.4 },
+    { label: "Garment Dye REACTIVE DYE - 16.4815", score: 16.4815 },
+    { label: "Garment Wash GARMENT DIPPING NORMAL -  16.4 ", score: 16.4 },
+    { label: "Garment Dye PIGMENT DYE - 18.836", score: 18.836 },
   ];
 
   const [selectedProcess, setSelectedProcess] = useState("");
