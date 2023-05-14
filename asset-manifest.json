@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ecoIndexProject/static/css/main.c01a764b.css",
-    "main.js": "/ecoIndexProject/static/js/main.309d2877.js",
+    "main.css": "/ecoIndexProject/static/css/main.818b3294.css",
+    "main.js": "/ecoIndexProject/static/js/main.a03bb699.js",
     "index.html": "/ecoIndexProject/index.html",
-    "main.c01a764b.css.map": "/ecoIndexProject/static/css/main.c01a764b.css.map",
-    "main.309d2877.js.map": "/ecoIndexProject/static/js/main.309d2877.js.map"
+    "main.818b3294.css.map": "/ecoIndexProject/static/css/main.818b3294.css.map",
+    "main.a03bb699.js.map": "/ecoIndexProject/static/js/main.a03bb699.js.map"
   },
   "entrypoints": [
-    "static/css/main.c01a764b.css",
-    "static/js/main.309d2877.js"
+    "static/css/main.818b3294.css",
+    "static/js/main.a03bb699.js"
   ]
 }
